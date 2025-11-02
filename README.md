@@ -20,7 +20,7 @@ Open Xampp; Navigate to sql query and run .sql content file provided in backend 
 
 
 
-git clone https://github.com/VinayakNishad/employee-management-system.git
+git clone https://github.com/VinayakNishad/EmployeeManagementSystem.git
 
 cd employee-management-system
 
