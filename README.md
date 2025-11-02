@@ -16,7 +16,7 @@ How to run :
 
 
 
-<!-- Open Xampp; Navigate to sql query and run .sql content file provided in backend folder -->
+Open Xampp; Navigate to sql query and run .sql content file provided in backend folder
 
 
 
