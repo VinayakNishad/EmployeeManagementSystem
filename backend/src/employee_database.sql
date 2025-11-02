@@ -1,47 +1,23 @@
--- 1. TABLE CREATION
--- -------------------
--- Drop the table if it already exists, so we can re-run the script
-
-create database if needed
 CREATE DATABASE IF NOT EXISTS employee_db;
 
+USE employee_db;
 
-DROP TABLE IF EXISTS employees;
-
--- Create the 'employees' table
-CREATE TABLE employees (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    department VARCHAR(100) NOT NULL,
-    designation VARCHAR(100) NOT NULL,
-    join_date DATE NOT NULL,
-
-    -- Add indexes for faster filtering and searching
-    -- The UNIQUE constraint on 'email' already creates an index
-    INDEX (name),
-    INDEX (department),
-    INDEX (designation),
-    INDEX (join_date)
-
-    -- For MySQL, a FULLTEXT index is even better for the search bar
-    -- which queries both name and email.
-    -- FULLTEXT(name, email)
+    department VARCHAR(100),
+    designation VARCHAR(100),
+    join_date DATE
 );
 
-
--- 2. SAMPLE DATA
--- ----------------
--- Insert sample data into the 'employees' table
-INSERT INTO employees (name, email, department, designation, join_date) VALUES
-('Alice Johnson', 'alice.j@example.com', 'Engineering', 'Senior Software Engineer', '2020-05-15'),
-('Bob Smith', 'bob.s@example.com', 'Sales', 'Sales Manager', '2019-11-01'),
-('Charlie Brown', 'charlie.b@example.com', 'Engineering', 'Software Engineer', '2022-03-10'),
-('Diana Prince', 'diana.p@example.com', 'Marketing', 'Marketing Coordinator', '2021-07-22'),
-('Eve Torres', 'eve.t@example.com', 'HR', 'HR Specialist', '2023-01-05'),
-('Frank Miller', 'frank.m@example.com', 'Engineering', 'Product Manager', '2021-02-18'),
-('Grace Lee', 'grace.l@example.com', 'Sales', 'Sales Associate', '2023-06-30'),
-('Henry Wilson', 'henry.w@example.com', 'Marketing', 'SEO Specialist', '2022-09-14'),
-('Ivy Green', 'ivy.g@example.com', 'Engineering', 'QA Tester', '2023-03-01'),
-('Jack Black', 'jack.b@example.com', 'HR', 'Recruiter', '2022-11-20');
-
+-- Insert some mock data
+INSERT INTO employees (name, email, department, designation, join_date)
+VALUES
+('Alice Smith', 'alice@example.com', 'Engineering', 'Frontend Developer', '2021-06-01'),
+('Bob Johnson', 'bob@example.com', 'Engineering', 'Backend Developer', '2019-03-15'),
+('Charlie Brown', 'charlie@example.com', 'Marketing', 'SEO Specialist', '2020-01-10'),
+('David Lee', 'david@example.com', 'Sales', 'Sales Manager', '2018-11-20'),
+('Eva Green', 'eva@example.com', 'Engineering', 'UI/UX Designer', '2022-05-30'),
+('Frank White', 'frank@example.com', 'HR', 'Recruiter', '2020-07-19'),
+('Grace Hall', 'grace@example.com', 'Marketing', 'Content Writer', '2021-09-05');

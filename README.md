@@ -14,19 +14,28 @@ API Integration — Fetch employee data dynamically using Axios from backend API
 
 How to run :
 
-git clone https://github.com/yourusername/employee-management-system.git
+
+
+<!-- Open Xampp; Navigate to sql query and run .sql content file provided in backend folder -->
+
+
+
+git clone https://github.com/VinayakNishad/employee-management-system.git
 
 cd employee-management-system
 
 cd assessment
 
 cd backend 
-node server.js
+node src/server.js 
 
 Open new terminal (bash)
 
 cd frontend 
 npm run dev
+
+
+
 
 
 
